@@ -1,0 +1,15 @@
+{
+    "name": "smartmail-ai/email-system",
+    "description": "Intelligent Email Management System with AI Assistant",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartMailAI\\": "src/"
+        }
+    }
+}
+

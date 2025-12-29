@@ -1,0 +1,484 @@
+/* SmartMail AI - Modern Creative Styles */
+
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --danger-color: #FF5252;
+    --warning-color: #FFC107;
+    --sidebar-width: 260px;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --text-color: #2d3436;
+    --text-light: #f5f6fa;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+}
+
+/* Dashboard Layout */
+.dashboard-body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Glassmorphism Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid var(--glass-border);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.sidebar-header h4 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 1rem 0.5rem;
+    overflow-y: auto;
+}
+
+.menu-item {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: rgba(255,255,255,0.8);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateX(5px);
+}
+
+.menu-item.active {
+    background: linear-gradient(90deg, var(--primary-color), #8e44ad);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-categories {
+    padding: 1rem;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(0,0,0,0.05);
+}
+
+.category-item {
+    width: 100%;
+    padding: 8px 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-item:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.02);
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    background: rgba(0,0,0,0.1);
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    position: relative;
+}
+
+.top-bar {
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.top-bar input {
+    border-radius: 50px;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    width: 350px;
+}
+
+.top-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+/* Email List */
+.email-list-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: transparent;
+}
+
+.email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.email-item {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.email-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.email-item:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.email-item.unread {
+    background: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+}
+
+.email-item.unread::before {
+    background: var(--primary-color);
+}
+
+.email-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.email-header > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.email-header > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.email-sender {
+    font-size: 1.1rem;
+    color: #2d3436;
+}
+
+.email-date {
+    font-size: 0.85rem;
+    color: #636e72;
+    background: rgba(0,0,0,0.05);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.email-subject {
+    font-size: 1rem;
+    color: #2d3436;
+    margin-bottom: 6px;
+}
+
+.email-preview {
+    color: #636e72;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* View Email Button (Eye Icon) */
+.btn-view-email {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    padding: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    outline: none;
+}
+
+.btn-view-email:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.15);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.6);
+    color: white !important;
+}
+
+.btn-view-email:active {
+    transform: scale(0.95);
+}
+
+.btn-view-email:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-view-email i {
+    font-size: 1rem;
+    color: white !important;
+}
+
+/* Edit Draft Button */
+.btn-edit-draft {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+    padding: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    outline: none;
+}
+
+.btn-edit-draft:hover {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+    transform: scale(1.15);
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.6);
+    color: white !important;
+}
+
+.btn-edit-draft:active {
+    transform: scale(0.95);
+}
+
+.btn-edit-draft:focus {
+    outline: 2px solid rgba(245, 87, 108, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-edit-draft i {
+    font-size: 1rem;
+    color: white !important;
+}
+
+/* Draft Email Styling */
+.email-item.draft-item {
+    border-left: 4px solid #ffc107;
+    background: linear-gradient(90deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 255, 255, 0.7) 10%);
+}
+
+.email-item.draft-item::before {
+    background: #ffc107;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #6C63FF, #4834d4);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #4834d4, #6C63FF);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(108, 99, 255, 0.3);
+}
+
+.btn-info {
+    background: linear-gradient(45deg, #00cec9, #0984e3);
+    border: none;
+}
+
+.btn-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 206, 201, 0.3);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(45deg, #6C63FF, #a29bfe);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.modal-body {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(162, 155, 254, 0.1) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.modal-body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Email View Content Styling */
+#viewBody {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body .bg-light {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.4);
+}

@@ -1,0 +1,95 @@
+═══════════════════════════════════════════════════════════════
+  SmartMail AI - QUICK START GUIDE
+═══════════════════════════════════════════════════════════════
+
+📋 STEP 1: SETUP DATABASE
+───────────────────────────────────────────────────────────────
+
+Option A - Using MySQL Command Line:
+  mysql -u root -p
+  CREATE DATABASE smartmail_ai;
+  USE smartmail_ai;
+  SOURCE /Users/arjun/smartmail-ai/database/smartmail.sql;
+  EXIT;
+
+Option B - Using phpMyAdmin:
+  1. Open phpMyAdmin
+  2. Create database: smartmail_ai
+  3. Import: database/smartmail.sql
+
+
+📋 STEP 2: CONFIGURE DATABASE
+───────────────────────────────────────────────────────────────
+
+Edit: backend/config/db.php
+
+Change these lines:
+  define('DB_USER', 'root');     // Your MySQL username
+  define('DB_PASS', '');         // Your MySQL password
+
+
+📋 STEP 3: (OPTIONAL) CONFIGURE AI
+───────────────────────────────────────────────────────────────
+
+Edit: backend/config/ai-config.php
+
+Change this line:
+  define('OPENAI_API_KEY', 'sk-your-key-here');
+
+Get API key from: https://platform.openai.com/api-keys
+
+
+📋 STEP 4: START THE SERVER
+───────────────────────────────────────────────────────────────
+
+Option A - Using the start script:
+  ./start.sh
+
+Option B - Using PHP directly:
+  cd /Users/arjun/smartmail-ai
+  php -S localhost:8000
+
+Option C - Using MAMP/XAMPP:
+  1. Copy project to htdocs/smartmail-ai
+  2. Start Apache and MySQL
+  3. Open: http://localhost/smartmail-ai
+
+
+📋 STEP 5: ACCESS THE APPLICATION
+───────────────────────────────────────────────────────────────
+
+Open browser: http://localhost:8000
+
+1. Click "Sign Up" to create account
+2. Login with your credentials
+3. Start using SmartMail AI!
+
+
+═══════════════════════════════════════════════════════════════
+  TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+❌ PHP not found?
+   Install PHP: brew install php
+   Or use MAMP/XAMPP
+
+❌ MySQL not found?
+   Install MySQL: brew install mysql
+   Or use MAMP/XAMPP
+
+❌ Database connection error?
+   Check: backend/config/db.php
+   Verify MySQL is running
+
+❌ Page not loading?
+   Make sure PHP server is running
+   Check port 8000 is available
+
+
+═══════════════════════════════════════════════════════════════
+  NEED MORE HELP?
+═══════════════════════════════════════════════════════════════
+
+See RUN.md for detailed instructions
+See README.md for full documentation
+

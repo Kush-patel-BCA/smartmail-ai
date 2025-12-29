@@ -1,0 +1,102 @@
+/* SmartMail AI - Enhanced Animations */
+
+/* Gradient Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Smooth Fade In */
+.fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide In Left with Bounce */
+.slide-in-left {
+    animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Email Item Entrance Stagger */
+.email-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Stagger delays */
+.email-item:nth-child(1) { animation-delay: 0.05s; }
+.email-item:nth-child(2) { animation-delay: 0.1s; }
+.email-item:nth-child(3) { animation-delay: 0.15s; }
+.email-item:nth-child(4) { animation-delay: 0.2s; }
+.email-item:nth-child(5) { animation-delay: 0.25s; }
+.email-item:nth-child(6) { animation-delay: 0.3s; }
+.email-item:nth-child(7) { animation-delay: 0.35s; }
+.email-item:nth-child(8) { animation-delay: 0.4s; }
+.email-item:nth-child(9) { animation-delay: 0.45s; }
+.email-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* Pulse Glow Effect */
+.pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(108, 99, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
+
+/* Floating Elements */
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Button Press Effect */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Shimmer Loading Effect */
+.shimmer {
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 104px; 
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+    0% { background-position: -468px 0; }
+    100% { background-position: 468px 0; }
+}
